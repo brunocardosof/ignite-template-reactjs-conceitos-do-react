@@ -36,8 +36,10 @@ export function TaskList() {
     );
   }
 
-  function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+  function handleRemoveTask(id: number): void {
+    if (confirm("Tem certeza que deseja remover a task?")) {
+      setTasks(tasks.filter((task) => task.id !== id));
+    }
   }
 
   function handleEmptyTaskTitle(): boolean {
