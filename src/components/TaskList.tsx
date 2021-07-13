@@ -16,7 +16,6 @@ export function TaskList() {
 
   function handleCreateNewTask(): boolean | void {
     if (!handleEmptyTaskTitle()) {
-      alert("Título não pode ser vazio!");
       return false;
     }
     const task = {
@@ -37,9 +36,7 @@ export function TaskList() {
   }
 
   function handleRemoveTask(id: number): void {
-    if (confirm("Tem certeza que deseja remover a task?")) {
-      setTasks(tasks.filter((task) => task.id !== id));
-    }
+    setTasks(tasks.filter((task) => task.id !== id));
   }
 
   function handleEmptyTaskTitle(): boolean {
